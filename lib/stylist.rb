@@ -22,4 +22,8 @@ class Stylist
     self.name().==(other_stylist.name()).&(self.stylist_id().==(other_stylist.stylist_id()))
   end
 
+  define_method(:save) do
+    DB.exec("INSERT INTO stylists (name, stylist_id) VALUES ('#{@name}', #{@stylist_id});")
+  end
+
 end
