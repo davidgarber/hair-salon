@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Library</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  <div id="navbar-div">
+    <form action="/" method="get" id="navbar">
+      <button class="btn btn-primary" type="submit" id="home">Home</button>
+    </form>
+    <form action="/books" method="get" id="navbar">
+      <button class="btn btn-primary" type="submit" id="clients">Clients</button>
+    </form>
+    <form action="/authors" method="get" id="navbar">
+      <button class="btn btn-primary" type="submit" id="stylists">Stylists</button>
+    </form>
+    <form action="/add/author" method="get" id="navbar">
+      <button class="btn btn-primary" type="submit" id="add_client">Add a Client</button>
+    </form>
+    <form action="/add/book" method="get" id="navbar">
+      <button class="btn btn-primary" type="submit" id="add_stylist">Add a Stylist</button>
+    </form>
+  </div>
+  <br>
+  <div class="container">
+    <%= yield %>
+  </div>
+
+</body>
+</html>
