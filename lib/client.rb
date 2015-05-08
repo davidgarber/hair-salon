@@ -35,5 +35,9 @@ class Client
     found_list
   end
 
-
+  define_method(:update) do |attributes|
+    @name = attributes.fetch(:name, @name)
+    @client_id = self.client_id()
+    DB.exec("UPDATE clients SET name = '#{@name}' WHERE client_id = #{@client_id}")
+    end
 end
