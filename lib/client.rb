@@ -25,5 +25,15 @@ class Client
     DB.exec("INSERT INTO clients (name, client_id) VALUES ('#{@name}', #{@client_id});")
   end
 
+  define_singleton_method(:find) do |client_id|
+    found_list = nil
+    Client.all().each() do |list|
+      if list.client_id().==(client_id)
+        found_list = list
+      end
+    end
+    found_list
+  end
+
 
 end
