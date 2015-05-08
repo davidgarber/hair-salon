@@ -21,9 +21,9 @@ class Client
     self.name().==(other_client.name()).&(self.client_id().==(other_client.client_id()))
   end
 
-  # define_method(:save) do
-  #   DB.exec("INSERT INTO clients (name, client_id) VALUES ('#{@name}', #{@client_id});")
-  # end
+  define_method(:save) do
+    DB.exec("INSERT INTO clients (name, client_id) VALUES ('#{@name}', #{@client_id});")
+  end
 
 
 end

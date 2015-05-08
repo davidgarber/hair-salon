@@ -24,19 +24,21 @@ describe(Client) do
     end
   end
 
-  # describe("#save") do
-  #   it("adds a client to the array of saved clients") do
-  #     test_client = Client.new({:name => "Julie", :client_id => 1})
-  #     test_client.save()
-  #     expect(Client.all()).to(eq([test_client]))
-  #   end
-  # end
 
-  describe("#client_id") do
-    it("lets you read the client ID out") do
+    describe("#client_id") do
+      it("lets you read the client ID out") do
+        test_client = Client.new({:name => "Julie", :client_id => 1})
+        expect(test_client.client_id).to(eq(1))
+      end
+    end
+
+  describe("#save") do
+    it("adds a client to the array of saved clients") do
       test_client = Client.new({:name => "Julie", :client_id => 1})
-      expect(test_client.client_id).to(eq(1))
+      test_client.save()
+      expect(Client.all()).to(eq([test_client]))
     end
   end
+
 
 end
