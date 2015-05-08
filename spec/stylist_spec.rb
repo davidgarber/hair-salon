@@ -8,4 +8,11 @@ describe(Stylist) do
       expect(test_stylist.name()).to(eq("Sarah"))
     end
   end
+
+  describe("#stylist_id") do
+    it("returns the value of stylist_id") do
+      test_stylist = Stylist.new({:name => "Sarah", :stylist_id => 1})
+      expect(test_stylist.stylist_id()).to(be_an_instance_of(Fixnum))
+    end
+  end
 end
