@@ -55,5 +55,17 @@ describe(Stylist) do
     stylist.update({:name => "Fred"})
     expect(stylist.name()).to(eq("Fred"))
   end
-end
+
+
+  it("lets you add an client to a stylist") do
+     stylist = Stylist.new({:name => "Sarah", :stylist_id => 1})
+     stylist.save()
+     ernest = Client.new({:name => "Ernest", :client_id => 1})
+     ernest.save()
+     brad = Client.new({:name => "Brad", :client_id => 1})
+     brad.save()
+     stylist.update({:client_id => [ernest.client_id(), brad.client_id()]})
+     expect(stylist.clients()).to(eq([ernest, brad]))
+   end
+ end
 end

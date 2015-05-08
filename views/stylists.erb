@@ -1,0 +1,16 @@
+<h1> Your Current Stylists </h1>
+
+<% if @stylist.any?() %>
+<h3> Here are your stylists:</h3>
+
+<ul>
+  <% @stylist.each() do |list| %>
+    <li><a href="/stylist/<%= list.id() %>"><%= list.name() %></a></li>
+    <% end %>
+</ul>
+
+<% else %>
+
+  <p> There are no stylist yet! </p>
+
+<% end %>
