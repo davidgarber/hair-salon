@@ -26,4 +26,19 @@ class Stylist
     DB.exec("INSERT INTO stylists (name, stylist_id) VALUES ('#{@name}', #{@stylist_id});")
   end
 
+  define_singleton_method(:find) do |stylist_id|
+    found_list = nil
+    Stylist.all().each() do |list|
+      if list.stylist_id().==(stylist_id)
+        found_list = list
+      end
+    end
+    found_list
+  end
+  # define_singleton_method(:find) do |stylist_id|
+  #   result = DB.exec("SELECT * FROM stylists WHERE stylist_id = #{stylist_id};")
+  #   name = result.first().fetch("name")
+  #   Stylist.new({:name => name, :stylist_id => stylist_id})
+  # end
+
 end
