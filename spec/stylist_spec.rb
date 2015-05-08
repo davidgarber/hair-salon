@@ -15,4 +15,10 @@ describe(Stylist) do
       expect(test_stylist.stylist_id()).to(be_an_instance_of(Fixnum))
     end
   end
+
+  describe(".all") do
+    it("is empty at first") do
+      expect(Stylist.all()).to(eq([]))
+    end
+  end
 end
